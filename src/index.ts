@@ -1,6 +1,6 @@
 import { NativeModules, NativeEventEmitter } from 'react-native';
 import { TinyEmitter } from 'tiny-emitter';
-import * as randomId from 'random-id';
+import randomId from 'random-id';
 import { Buffer } from 'buffer';
 
 const { NativeMqtt } = NativeModules;
@@ -10,7 +10,7 @@ export interface TlsOptions {
 	caDer?: String;
 	cert?: string;
 	key?: string;
-	p12?: Buffer;
+	p12?: string;
 	pass?: string;
 }
 
@@ -109,7 +109,7 @@ export class Client {
 			const opts = Object.assign({}, options);
 			if (opts.tls && opts.tls.p12) {
 				opts.tls = Object.assign({}, opts.tls);
-				opts.tls.p12 = opts.tls.p12.toString('base64') as any;
+				opts.tls.p12 = opts.tls.p12;
 			}
 			NativeMqtt.connect(this.id, this.url, opts, (err) => {
 				if (err) {
