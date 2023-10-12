@@ -4,8 +4,4 @@
 
 #import <React/RCTBridgeModule.h>
 #import <React/RCTEventEmitter.h>
-#import <CocoaAsyncSocket/GCDAsyncSocket.h>
-#import <CocoaAsyncSocket/GCDAsyncUdpSocket.h>
-
-#import "CocoaMQTT.h"
 

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CocoaMQTT
 
 @objc(NativeMqtt)
 class NativeMqtt: RCTEventEmitter {
